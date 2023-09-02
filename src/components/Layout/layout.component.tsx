@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Poppins } from 'next/font/google'
 import type { ReactElement } from 'react'
 import { IconHome2 } from '@tabler/icons-react';
+import Navbar from '../Navbar/navbar.components';
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload: false, });
 
@@ -15,28 +16,7 @@ const Layout = ({ children }: { children: ReactElement }) => {
         </Head>
             <main className={`bg-gray-900 min-h-screen px-4 py-6 font-sans`}>
                 <div className='w-[6%] fixed left-0 h-full z-50 hidden lg:block md:block'>
-                    <nav className='flex flex-col items-center h-full'>
-                        <div className='flex flex-col gap-4 pb-4'>
-                            <button className='p-2 bg-gray-700 rounded relative hover:scale-105 transition-transform'>
-                                <IconHome2 size={18} className='text-white' />
-                                <span className='absolute h-full block text-sm text-white font-light left-10 top-0 bg-inherit p-2 rounded'>Home</span>
-                            </button>
-                            <button className='p-2 bg-gray-800 rounded relative hover:scale-105 transition-transform'>
-                                <IconHome2 size={18} className='text-white' />
-                                <span className='absolute h-full block text-sm text-white font-light left-10 top-0 bg-inherit p-2 rounded'>Home</span>
-                            </button>
-                            <button className='p-2 bg-gray-800 rounded relative hover:scale-105 transition-transform'>
-                                <IconHome2 size={18} className='text-white' />
-                                <span className='absolute h-full block text-sm text-white font-light left-10 top-0 bg-inherit p-2 rounded'>Home</span>
-                            </button>
-                            <button className='p-2 bg-gray-800 rounded relative hover:scale-105 transition-transform'>
-                                <IconHome2 size={18} className='text-white' />
-                                <span className='absolute h-full block text-sm text-white font-light left-10 top-0 bg-inherit p-2 rounded'>Home</span>
-                            </button>
-                        </div>
-                        <div className='border-r-2 border-gray-700 h-full'>
-                        </div>
-                    </nav>
+                    <Navbar />
                 </div>
                 <nav className='md:hidden'>
 
