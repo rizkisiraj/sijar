@@ -3,7 +3,7 @@ import ComingSoon from "~/components/ComingSoon/comingSoon.component"
 
 export default function Dashboard() {
     return (
-        <Layout>
+        <Layout title="Dashboard" logoPath="/dashboard-ico.png">
             <ComingSoon />
         </Layout>
     )

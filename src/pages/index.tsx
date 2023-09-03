@@ -11,7 +11,7 @@ const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "70
 
 export default function Home() {
   return (
-          <Layout>
+          <Layout title="Home" logoPath="/home-ico.png">
             <div className={poppins.className}>
             <section className="mb-4">
               <div className="mb-4">

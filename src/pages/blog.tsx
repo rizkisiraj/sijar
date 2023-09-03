@@ -6,7 +6,7 @@ const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "70
 
 export default function Blog() {
     return (
-        <Layout>
+        <Layout title="Blog" logoPath="/paper-ico.png">
             <ComingSoon />
         </Layout>
     )
