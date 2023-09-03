@@ -21,7 +21,7 @@ export default function Home() {
               <p className="text-gray-300 font-light text-sm text-center">Mobile Developer | Student of the Universe | Lifelong Learner</p>
             </section>
             <hr />
-            <section className="my-4 text-gray-200">
+            <section className="my-4 text-gray-200 text-base leading-8">
               <p>Hey guys! Siraj here, and this is my blog. I&apos;m a 3rd year CompSci student, who is very passionate on learning about technology especially on mobile development. I spend most of my time by coding stuffs with {<BrandCard icon={<IconBrandFlutter className="inline-block" size={14} />} name="Flutter" link="flutter.dev" />}, {<BrandCard icon={<IconBrandSwift className="inline-block" size={14} />} name="SwiftUI" link="https://developer.apple.com/xcode/swiftui/" />}, {<BrandCard icon={<IconBrandReact className="inline-block" size={14} />} name="React" link="react.dev" />}. I also made several projects that you can see here :</p>
               <div className="my-6 flex flex-wrap gap-2">
                 <ProjectCard id="1231" name="MealMinder" stack={Stack.mobile} />
