@@ -13,6 +13,9 @@ const Layout = ({ children, title, logoPath }: { children: ReactElement, title: 
             <title>Rizki Siraj // {title}</title>
             <meta name="description" content="A portofolio website of Muhammad Rizki Siraj" />
             <link rel="icon" href={logoPath} />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         </Head>
             <main className={`bg-gray-900 min-h-screen px-4 py-6 font-sans flex flex-col`}>
                 <div className='w-[6%] fixed left-0 h-full z-50 hidden lg:block md:block'>
