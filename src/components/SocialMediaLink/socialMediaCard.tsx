@@ -1,4 +1,4 @@
-import { SocialMediaLink } from "~/pages/links";
+import { type SocialMediaLink } from "~/pages/links";
 
 const SocialMediaCard = (props: SocialMediaLink) => {
     const { link, socialMedia, username } = props

@@ -1,6 +1,5 @@
 import { Poppins } from "next/font/google";
 import Image from "next/image";
-import { api } from "~/utils/api";
 import { IconBrandFlutter, IconBrandSwift, IconBrandReact } from "@tabler/icons-react";
 import BrandCard from "~/components/BrandCard/brandCard.component";
 import ProjectCard, { Stack } from "~/components/projectCard/projectCard.component";

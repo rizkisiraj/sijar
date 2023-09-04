@@ -1,10 +1,6 @@
 import Head from 'next/head'
-import { Poppins } from 'next/font/google'
 import type { ReactElement } from 'react'
-import { IconHome2 } from '@tabler/icons-react';
 import Navbar from '../Navbar/navbar.components';
-
-const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload: false, });
 
 const Layout = ({ children, title, logoPath }: { children: ReactElement, title: string, logoPath: string }) => {
     return (

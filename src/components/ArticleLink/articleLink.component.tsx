@@ -1,4 +1,3 @@
-import { IconArrowUpRight } from "@tabler/icons-react"
 import Link from "next/link"
 
 interface Article {
@@ -9,7 +8,7 @@ interface Article {
 
 const ArticleLink= (props: Article) => {
 
-    const { id, title, views } = props
+    const { title, views } = props
 
     return (
         <>
