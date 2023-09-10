@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-interface Article {
+export interface Article {
     id: string
     title: string
     views: number
