@@ -12,7 +12,7 @@ export default function Blog({ posts }: { posts:any[] }) {
                     {
                         posts.map(post => {
                             return (
-                                <ArticleLink id={post.data.title} views={2000} title={post.data.title} key={post.slug} />
+                                <ArticleLink id={post.slug} views={2000} title={post.data.title} key={post.slug} />
                             )
                         })
                     }

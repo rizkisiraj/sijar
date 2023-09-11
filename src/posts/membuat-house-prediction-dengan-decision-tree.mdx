@@ -86,7 +86,12 @@ y = np.asarray(df['Rent'])
 Dalam melatih model, kita harus memisahkan data kita menjadi data untuk training model dan data untuk melakukan test terhadap model yang telah di train. Hal ini bertujuan agar tidak terjadi underfitting atau overfitting pada model.
 
 ```
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=4)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, 
+    y, 
+    test_size=0.2, 
+    random_state=4
+)
 ```
 
 ## Melatih Model

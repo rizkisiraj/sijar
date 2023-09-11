@@ -8,12 +8,12 @@ export interface Article {
 
 const ArticleLink= (props: Article) => {
 
-    const { title, views } = props
+    const { id ,title, views } = props
 
     return (
         <>
             <div>
-                <Link href="#" className="text-neutral-100 hover:underline decoration-indigo-300">{title}</Link>
+                <Link href={`/blog/${id}`} className="text-neutral-100 hover:underline decoration-indigo-300">{title}</Link>
                 <p className="text-neutral-400">{views.toLocaleString()} views</p>
             </div>
         </>
