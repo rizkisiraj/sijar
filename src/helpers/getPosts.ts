@@ -9,7 +9,6 @@ const postsDirectory = path.join(projectRoot, "/src/posts");
   const allPostsData = files.map((fileName) => {
     const slug = fileName.replace(".mdx", "");
     const filePath = path.join(postsDirectory, `${slug}.mdx`);
-    console.log("File path:", filePath);
     const fileContents = fs.readFileSync(
       path.join(filePath),
       "utf8"
