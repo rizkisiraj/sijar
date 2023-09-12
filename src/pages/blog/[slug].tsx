@@ -1,15 +1,15 @@
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import getPost from "~/helpers/getPost";
 import getPosts from "~/helpers/getPosts";
 import { serialize } from "next-mdx-remote/serialize";
 import Layout from "~/components/Layout/layout.component";
 
 interface Props {
-  data: any
-  content: any
+  data: {title: string, date: string}
+  content: MDXRemoteSerializeResult
 }
 
-function Post(props:Props) {
+export default function Post(props:Props) {
   const { data, content } = props
   return (
     <Layout title={data.title} logoPath="/dashboard-ico.png">
@@ -27,10 +27,8 @@ function Post(props:Props) {
   );
 }
 
-export default Post;
-
-export const getStaticPaths = async () => {
-  const posts = await getPosts();
+export const getStaticPaths = () => {
+  const posts = getPosts();
   const paths = posts.map((post) => ({ params: { slug: post.slug } }));
   return {
     paths,
@@ -38,9 +36,13 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ params }: { params: any }) => {
-  const post = await getPost(params.slug);
-  const mdxSource = await serialize(post.content);
+interface StaticProps {
+  params: { slug: string }
+}
+
+export const getStaticProps = async (props: StaticProps) => {
+  const post = getPost(props.params.slug);
+  const mdxSource: MDXRemoteSerializeResult = await serialize(post.content);
   return {
     props: {
       data: post.data,

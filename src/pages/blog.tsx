@@ -1,8 +1,21 @@
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import ArticleLink, {type Article } from "~/components/ArticleLink/articleLink.component";
 import Layout from "~/components/Layout/layout.component";
 import getPosts from "~/helpers/getPosts";
 
-export default function Blog({ posts }: { posts:any[] }) {
+interface Props {
+    posts: {
+        slug: string
+        data: {
+            title: string
+            content: MDXRemoteSerializeResult
+        }
+    }[]
+}
+
+export default function Blog(props:Props) {
+    const { posts } = props
+
     return (
         <Layout title="Blog" logoPath="/paper-ico.png">
             <div className="font-sans">
