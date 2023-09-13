@@ -5,6 +5,7 @@ import BrandCard from "~/components/BrandCard/brandCard.component";
 import ProjectCard, { Stack } from "~/components/projectCard/projectCard.component";
 import ArticleCard from "~/components/ArticleCard/articleCard.component";
 import Layout from "~/components/Layout/layout.component";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload: false, });
 
