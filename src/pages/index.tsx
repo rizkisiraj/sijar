@@ -8,6 +8,16 @@ import Layout from "~/components/Layout/layout.component";
 
 const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], preload: false, });
 
+interface Props {
+  posts: {
+      slug: string
+      data: {
+          title: string
+          content: MDXRemoteSerializeResult
+      }
+  }[]
+}
+
 export default function Home() {
   return (
           <Layout title="Home" logoPath="/home-ico.png">

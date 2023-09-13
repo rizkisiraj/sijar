@@ -19,7 +19,7 @@ export default function Post(props:Props) {
         <p className="text-gray-500">2,000 Views</p>
         <time className="text-gray-500 italic">{data.date}</time>
       </div>
-      <div className="prose-lg prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12">
+      <div className="prose-lg prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-xs">
         <MDXRemote {...content} />
       </div>
     </div>
