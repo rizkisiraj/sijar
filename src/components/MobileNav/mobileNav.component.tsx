@@ -37,28 +37,27 @@ const links: LinkComponent[] = [
 ]
 
 
-const Navbar = () => {
+const MobileNav = () => {
     const router = useRouter();
     const currentRoute = router.pathname;
 
     return (
-        <nav className={`flex flex-col items-center h-full`}>
-            <div className='flex flex-col gap-4 pb-4'>
+        <div className="w-full max-w-md p-4 h-auto left-1/2 -translate-x-1/2 fixed bottom-4 md:hidden">
+        <nav className={`w-full backdrop-blur-sm rounded bg-gray-800/50 p-4 overflow-x-scroll`}>
+            <div className='flex justify-evenly gap-4'>
                 {
                     links.map(link => {
                         return (
-                            <Link  key={link.name} href={link.path} className={`p-2 ${link.path === currentRoute ? 'bg-gray-700' : 'bg-gray-800'} rounded relative hover:scale-105 transition-transform`} aria-label="">
+                            <Link aria-labelledby={link.name} key={link.name} href={link.path} className={`p-2 ${link.path === currentRoute ? 'bg-gray-700' : 'bg-gray-800'} rounded relative hover:scale-105 transition-transform`} aria-label="">
                                 <link.icon size={18} className='text-white' />
-                                <span className='absolute h-full block text-sm text-white font-light left-10 top-0 bg-inherit p-2 rounded'>{link.name}</span>
                             </Link>
                         )
                     })
                 }
             </div>
-            <div className='border-r-2 border-gray-700 h-full'>
-            </div>
         </nav>
+        </div>
     )
 }
 
-export default Navbar
+export default MobileNav

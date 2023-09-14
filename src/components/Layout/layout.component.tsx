@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import type { ReactElement } from 'react'
 import Navbar from '../Navbar/navbar.components';
+import MobileNav from '../MobileNav/mobileNav.component';
 
 const Layout = ({ children, title, logoPath }: { children: ReactElement, title: string, logoPath: string }) => {
     return (
@@ -17,9 +18,7 @@ const Layout = ({ children, title, logoPath }: { children: ReactElement, title: 
                 <div className='w-[6%] fixed left-0 h-full z-50 hidden lg:block md:block'>
                     <Navbar />
                 </div>
-                <nav className='md:hidden'>
-
-                </nav>
+                <MobileNav />
                 <section className={`max-w-2xl h-full w-full mx-auto py-4 flex-1`}>
                     {children}
                 </section>
