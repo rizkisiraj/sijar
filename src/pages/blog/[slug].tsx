@@ -3,6 +3,7 @@ import getPost from "~/helpers/getPost";
 import getPosts from "~/helpers/getPosts";
 import { serialize } from "next-mdx-remote/serialize";
 import Layout from "~/components/Layout/layout.component";
+import formatDateWithAgo from "~/helpers/convertDate";
 
 interface Props {
   data: {title: string, date: string}
@@ -16,8 +17,8 @@ export default function Post(props:Props) {
     <div className="font-sans">
       <h1 className="font-bold text-3xl mb-4 text-white">{data.title}</h1>
       <div className="flex justify-between items-center">
-        <p className="text-gray-500">2,000 Views</p>
-        <time className="text-gray-500 italic">{data.date}</time>
+      <time className="text-gray-500 text-sm">{formatDateWithAgo(new Date(data.date))}</time>
+        <p className="text-gray-500 text-sm">2,000 Views</p>
       </div>
       <div className="prose-lg prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-xs">
         <MDXRemote {...content} />
