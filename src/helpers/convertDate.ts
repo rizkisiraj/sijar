@@ -1,4 +1,9 @@
+
 function formatDateWithAgo(date: Date) {
+    if (!date) {
+        return "Invalid date";
+    }
+
     const months = [
       'January', 'February', 'March', 'April',
       'May', 'June', 'July', 'August',
@@ -6,19 +11,21 @@ function formatDateWithAgo(date: Date) {
     ];
   
     const currentDate = new Date();
-    const targetDate = new Date(date);
+    const targetDate: Date = new Date(date);
     
     const yearDiff = currentDate.getFullYear() - targetDate.getFullYear();
     const monthDiff = currentDate.getMonth() - targetDate.getMonth();
     
-    let formattedDate: string = `${months[targetDate.getMonth()]} ${targetDate.getDate()}, ${targetDate.getFullYear()}`;
+  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+   const formattedDate = `${months[targetDate.getMonth()]} ${targetDate.getDate()}, ${targetDate.getFullYear()}`;
+    let diff: string;
     
     if (yearDiff === 0 && monthDiff === 0) {
-      formattedDate += " (this month)";
+      diff = " (this month)";
     } else if (yearDiff === 0 && monthDiff === 1) {
-      formattedDate += " (1mo ago)";
+      diff = " (1mo ago)";
     } else {
-      formattedDate += ` (${yearDiff}y ${monthDiff}mo ago)`;
+      diff = ` (${yearDiff}y ${monthDiff}mo ago)`;
     }
     
     return formattedDate;
