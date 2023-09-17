@@ -28,7 +28,7 @@ function formatDateWithAgo(date: Date) {
       diff = ` (${yearDiff}y ${monthDiff}mo ago)`;
     }
     
-    return formattedDate;
+    return formattedDate + " " + diff;
   }
 
   export default formatDateWithAgo;
