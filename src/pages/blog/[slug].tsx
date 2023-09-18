@@ -21,7 +21,7 @@ export default function Post(props:Props) {
       <time className="text-gray-500 text-sm">{formatDateWithAgo(new Date(data.date))}</time>
         <p className="text-gray-500 text-sm">2,000 Views</p>
       </div>
-      <div className="prose-lg prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-xs">
+      <div className="prose-lg prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-xs prose-pre:max-w-full prose-pre:overflow-x-auto">
         <MDXRemote {...content} />
       </div>
     </div>
