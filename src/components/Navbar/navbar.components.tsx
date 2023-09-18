@@ -48,7 +48,7 @@ const Navbar = () => {
                 {
                     links.map(link => {
                         return (
-                            <Link  key={link.name} href={link.path} className={`p-2 ${link.path === currentRoute ? 'bg-gray-700' : (currentRoute.includes("blog") ? 'bg-gray-700'  : 'bg-gray-800')} rounded relative hover:scale-105 transition-transform`} aria-label="">
+                            <Link  key={link.name} href={link.path} className={`p-2 ${link.path === currentRoute ? 'bg-gray-700' : (link.path === "/blog" && currentRoute.includes("blog") ? 'bg-gray-700'  : 'bg-gray-800')} rounded relative hover:scale-105 transition-transform`} aria-label="">
                                 <link.icon size={18} className='text-white' />
                                 <span className='absolute h-full block text-sm text-white font-light left-10 top-0 bg-inherit p-2 rounded'>{link.name}</span>
                             </Link>
