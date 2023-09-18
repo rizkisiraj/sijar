@@ -5,6 +5,14 @@ import getPosts from "~/helpers/getPosts";
 import { serialize } from "next-mdx-remote/serialize";
 import Layout from "~/components/Layout/layout.component";
 import formatDateWithAgo from "~/helpers/convertDate";
+import rehypeHighlight from "rehype-highlight";
+
+const options = {
+    mdxOptions: {
+        remarkPlugins: [],
+        rehypePlugins: [rehypeHighlight],
+    }
+}
 
 interface Props {
   data: {title: string, date: string}
@@ -21,7 +29,7 @@ export default function Post(props:Props) {
       <time className="text-gray-500 text-sm">{formatDateWithAgo(new Date(data.date))}</time>
         <p className="text-gray-500 text-sm">2,000 Views</p>
       </div>
-      <div className="prose-lg prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-xs prose-pre:max-w-full prose-pre:overflow-x-auto">
+      <div className="prose-lg prose-code:bg-inherit prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-sm prose-pre:max-w-full prose-pre:overflow-x-auto">
         <MDXRemote {...content} />
       </div>
     </div>
@@ -44,7 +52,13 @@ interface StaticProps {
 
 export const getStaticProps = async (props: StaticProps) => {
   const post = getPost(props.params.slug);
-  const mdxSource: MDXRemoteSerializeResult = await serialize(post.content);
+  const mdxSource: MDXRemoteSerializeResult = await serialize(post.content, {
+    mdxOptions: {
+    //  eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
+      rehypePlugins: [rehypeHighlight]
+    }
+  });
   return {
     props: {
       data: post.data,

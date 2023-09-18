@@ -17,7 +17,7 @@ Dataset yang akan kita pakai adalah [House Price Dataset](https://www.kaggle.com
 
 Seperti biasa, hal yang pertama kali kita lakukan sebelum membuat model adalah mengimpor  _libraries_.
 
-```
+```python
 import pandas as pd
 import numpy as np  
 from sklearn.model_selection import train_test_split
@@ -29,7 +29,7 @@ Beberapa  _libraries_  diatas merupakan libraries yang sering digunakan dalam pe
 ## Load Dataset
 
 Hal yang selanjutnya kita lakukan adalah memuat dataset yang akan kita olah.
-```
+```python
 df = pd.read_csv('House_Rent_Dataset.csv')
 ```
 Kode diatas digunakan untuk membaca dataset yang telah diimport tadi. Read_csv merupakan fungsi dari  _library_  pandas yang berguna untuk membaca file berformat .csv.
@@ -37,7 +37,7 @@ Kode diatas digunakan untuk membaca dataset yang telah diimport tadi. Read_csv m
 ## Eksplorasi Data
 
 Sebelum kita masuk ke pengolahan data, ada baiknya kita terlebih dahulu mengeksplorasi data yang akan kita olah. Eksplorasi data berguna agar kita mengetahui tipe data yang ada di dalam dataset juga apakah ada cell yang kosong di dalam dataset.
-```
+```python
 df.info()  
 <class 'pandas.core.frame.DataFrame'>  
 RangeIndex: 4746 entries, 0 to 4745  
@@ -66,7 +66,7 @@ Dari sini kita dapat mengetahui tipe data yang dipakai masing-masing kolom dalam
 ## Mengubah Data Kategorikal Menjadi Numerik
 
 Dapat kita ketahui bahwa beberapa data yang ada di dataset kita masih merupakan data kategorikal atau data yang sulit untuk diolah oleh komputer. Maka dari itu, kita harus merubah data kategorikal kita menjadi data numerik agar komputer dapat mengolahnya dengan baik.
-```
+```python
 df['City']= df.groupby("City").ngroup()  
 df['Area Type']= df.groupby("Area Type").ngroup()  
 df['Furnishing Status']= df.groupby("Furnishing Status").ngroup()
@@ -76,7 +76,7 @@ Kode diatas berguna untuk mengubah data kategorikal menjadi numerik dengan cara 
 ## Memisahkan Atribut dan Label
 
 Untuk dapat melatih model kita, kita harus memisahkan atribut dan label agar mesin dapat mempelajari dataset yang akan kita berikan. Atribut berperan sebagai petunjuk sedangkan label berperan sebagai jawaban atau kelompok yang nantinya akan dijadikan acuan untuk memeriksa benar salahnya tebakan dari mesin.
-```
+```python
 X = np.asarray(df.drop(['Rent'], axis=1))  
 y = np.asarray(df['Rent'])
 ```
@@ -85,7 +85,7 @@ y = np.asarray(df['Rent'])
 
 Dalam melatih model, kita harus memisahkan data kita menjadi data untuk training model dan data untuk melakukan test terhadap model yang telah di train. Hal ini bertujuan agar tidak terjadi underfitting atau overfitting pada model.
 
-```
+```python
 X_train, X_test, y_train, y_test = train_test_split(
     X, 
     y, 
@@ -105,7 +105,7 @@ clf.fit(X_train,y_train)
 ## Mengecek Akurasi Pada Model
 
 Tentu saja setelah kita melatih model, hal selanjutnya yang harus kita lakukan adalah mengecek akurasi pada model untuk mengetahui apakah ada indikasi overfitting atau underfitting dalam model kita.
-```
+```python
 yhat = clf.predict(X_test)  
 r2_score(y_test, yhat)  
 0.9909972282120773

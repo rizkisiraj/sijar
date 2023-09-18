@@ -12,6 +12,7 @@ const Layout = ({ children, title, logoPath }: { children: ReactElement, title: 
             <link rel="icon" href={logoPath} />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"></link>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
         </Head>
             <main className={`bg-gray-900 min-h-screen px-4 py-6 font-sans flex flex-col`}>
