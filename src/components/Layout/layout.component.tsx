@@ -7,7 +7,7 @@ const Layout = ({ children, title, logoPath }: { children: ReactElement, title: 
     return (
         <>
         <Head>
-            <title>Rizki Siraj // {title}</title>
+            <title>{`Rizki Siraj // ${title}`}</title>
             <meta name="description" content="A portofolio website of Muhammad Rizki Siraj" />
             <link rel="icon" href={logoPath} />
             <link rel="preconnect" href="https://fonts.googleapis.com" />

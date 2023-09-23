@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { IconHome2, IconDashboard, IconArticle, IconPaperclip, IconBook, TablerIconsProps } from "@tabler/icons-react"
+import { IconHome2, IconDashboard, IconArticle, IconPaperclip, IconBook, TablerIconsProps, IconSourceCode } from "@tabler/icons-react"
 import { useRouter } from "next/router";
 
 interface LinkComponent {
@@ -23,6 +23,11 @@ const links: LinkComponent[] = [
         icon: IconArticle,
         name: "Blogs",
         path: "/blog"
+    },
+    {
+        icon: IconSourceCode,
+        name: "Projects",
+        path: "/project"
     },
     {
         icon: IconDashboard,

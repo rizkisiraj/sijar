@@ -4,13 +4,7 @@ import Link from "next/link"
 interface Project {
     id: string
     name: string
-    stack: Stack
-}
-
-export enum Stack {
-    web = "Website",
-    mobile = "Mobile App",
-    machineLearningModel = "Machine Learning Model"
+    stack: string
 }
 
 const ProjectCard = (props: Project) => {
