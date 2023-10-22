@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import type { NextRequest } from "next/server";
@@ -8,19 +7,23 @@ export const config = {
   runtime: "experimental-edge",
 };
 
-type LastFmUser = {
-  url: string;
-  playcount: number;
+type WakatimeData = {
+    url: string;
+    total_seconds: number;
 };
 
 export default async function handler(req: NextRequest) {
   const resp = await fetch(
-    `http://ws.audioscrobbler.com/2.0/?method=user.getinfo&user=rizkis890&api_key=${process.env.LASTFM_API_KEY}&format=json`
+    `https://wakatime.com/api/v1/users/current/all_time_since_today`,
+    {
+        headers: {
+          Authorization: `Basic ${btoa(process.env.WAKATIME_API_KEY as string)}`,
+        },
+    }
   );
-  const response: {user: LastFmUser} = await resp.json();
-  const user = response.user;
+  const response: {data: WakatimeData} = await resp.json();
 
-  return new Response(JSON.stringify(user), {
+  return new Response(JSON.stringify(response.data), {
     status: 200,
     headers: {
       "Content-Type": "application/json",

@@ -5,6 +5,7 @@ import spotifyPict from "public/spotify-pict.jpeg";
 import { LastFmUserResponse } from "~/lib/types";
 import useSWR from "swr";
 import fetcher from "~/lib/fetcher";
+import Stats from "~/components/Stats/stats.component";
 
 export default function Dashboard() {
     const { data: lastFmData } = useSWR<LastFmUserResponse>('/api/scrobble', fetcher);
@@ -23,16 +24,7 @@ export default function Dashboard() {
                         <Image loading="lazy" placeholder="blur" className="mx-auto object-cover rounded-md" width={120} height={120} src={spotifyPict} alt="avatar" />
                     </div>
                 </div>
-                <div className="w-full flex gap-4">
-                    <div className="flex-1 p-4 bg-gray-700 rounded-md shadow-md">
-                        <h3 className=" text-gray-300 mb-2">Spotify Minutes</h3>
-                        <p className="text-white text-xl font-semibold">{lastFmData?.playcount || '-'}</p>
-                    </div>
-                    <div className="flex-1 p-4 bg-gray-700 rounded-md shadow-md">
-                        <h3 className=" text-gray-300 mb-2">Spotify Minutes</h3>
-                        <p className="text-white text-xl font-semibold">{lastFmData?.playcount || '-'}</p>
-                    </div>
-                </div>
+                <Stats />
             </div>
         </Layout>
     )
