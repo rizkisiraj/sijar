@@ -22,11 +22,11 @@ export default function Blog(props:Props) {
     const { projects } = props
 
     return (
-        <Layout title="Blog" logoPath="/paper-ico.png">
+        <Layout title="Project" logoPath="/paper-ico.png">
             <div className="font-sans">
-                <h1 className="text-4xl text-white font-semibold mb-2">Blogs</h1>
-                <p className="font-light text-gray-300 text-sm mb-6">List of writings that i have made.</p>
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-rows-4 gap-4">
+                <h1 className="text-4xl text-white font-semibold mb-2">Projects</h1>
+                <p className="font-light text-gray-300 text-sm mb-6">List of websites, models, and apps that i have made.</p>
+                <section className="grid grid-cols-2 md:grid-cols-2 gap-4">
                     {
                         projects.map(project => {
                             return (

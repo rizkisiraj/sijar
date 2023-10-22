@@ -45,7 +45,6 @@ const links: LinkComponent[] = [
 const Navbar = () => {
     const router = useRouter();
     const currentRoute = router.pathname;
-    console.log(currentRoute.includes("blog"))
 
     return (
         <nav className={`flex flex-col items-center h-full`}>
