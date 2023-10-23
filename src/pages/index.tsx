@@ -28,7 +28,7 @@ export default function Home(props:Props) {
             <div className={poppins.className}>
             <section className="mb-4">
               <div className="mb-4">
-                <Image loading="lazy" placeholder="blur" className="mx-auto mb-2 rounded-full border-4 border-indigo-500" width={150} height={150} src={avatar} alt="avatar" />
+                <Image loading="lazy" placeholder="blur" className="mx-auto mb-2 rounded-full border-4 border-indigo-500" width={180} height={180} src={avatar} alt="avatar" />
               </div>
               <h1 className="text-white font-semibold text-2xl mb-2 text-center">Rizki Siraj</h1>
               <p className="text-gray-300 font-light text-sm text-center">Mobile Developer | Student of the Universe | Lifelong Learner</p>
