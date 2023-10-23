@@ -2,14 +2,10 @@ import Layout from "~/components/Layout/layout.component";
 import ComingSoon from "~/components/ComingSoon/comingSoon.component";
 import Image from "next/image";
 import spotifyPict from "public/spotify-pict.jpeg";
-import { LastFmUserResponse } from "~/lib/types";
-import useSWR from "swr";
-import fetcher from "~/lib/fetcher";
 import Stats from "~/components/Stats/stats.component";
+import TopArtists from "~/components/TopArtists/topArtists.component";
 
 export default function Dashboard() {
-    const { data: lastFmData } = useSWR<LastFmUserResponse>('/api/scrobble', fetcher);
-
     return (
         <Layout title="Dashboard" logoPath="/dashboard-ico.png">
             <div className="font-sans">
@@ -21,10 +17,11 @@ export default function Dashboard() {
                         <p className="text-xl text-gray-300">siraj</p>
                     </div>
                     <div className="shadow-sm">
-                        <Image loading="lazy" placeholder="blur" className="mx-auto object-cover rounded-md" width={120} height={120} src={spotifyPict} alt="avatar" />
+                        <Image className="rounded-md" loading="lazy" placeholder="blur" width={120} height={120} src={spotifyPict} alt="avatar" />
                     </div>
                 </div>
                 <Stats />
+                <TopArtists />
             </div>
         </Layout>
     )

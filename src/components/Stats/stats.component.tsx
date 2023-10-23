@@ -20,7 +20,7 @@ const Stats = () => {
     ]
 
     return (
-        <div className="w-full flex gap-4 flex-wrap ">
+        <div className="w-full flex gap-4 flex-wrap mb-4">
             {
                 statsCard.map(stat => {
                     return (
