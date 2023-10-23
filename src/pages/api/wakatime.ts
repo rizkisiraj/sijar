@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import type { NextRequest } from "next/server";
 
@@ -21,7 +22,7 @@ export default async function handler(req: NextRequest) {
         },
     }
   );
-  const response: {data: WakatimeData} = await resp.json();
+  const response = await resp.json();
 
   return new Response(JSON.stringify(response.data), {
     status: 200,
