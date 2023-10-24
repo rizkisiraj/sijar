@@ -4,6 +4,7 @@ import Image from "next/image";
 import spotifyPict from "public/spotify-pict.webp";
 import Stats from "~/components/Stats/stats.component";
 import TopArtists from "~/components/TopArtists/topArtists.component";
+import TopTracks from "~/components/TopTracks/topTracks.component";
 
 export default function Dashboard() {
     return (
@@ -22,6 +23,7 @@ export default function Dashboard() {
                 </div>
                 <Stats />
                 <TopArtists />
+                <TopTracks />
             </div>
         </Layout>
     )

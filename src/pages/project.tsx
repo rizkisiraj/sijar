@@ -34,9 +34,6 @@ export default function Blog(props:Props) {
                             )
                         })
                     }
-                    {/* <ArticleLink id="123" title="How to Basic" views={2000} key={123} />
-                    <ArticleLink id="1234" title="How to Basic" views={2000} key={123} />
-                    <ArticleLink id="1236" title="How to Basic" views={2000} key={123} /> */}
                 </section>
             </div>
         </Layout>

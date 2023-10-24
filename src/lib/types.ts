@@ -13,3 +13,9 @@ export type TopArtistsResponse = {
   playcount: string;
   url: string;
 };
+
+export type TopTracksResponse = {
+  name: string;
+  playcount: string;
+  url: string;
+};
