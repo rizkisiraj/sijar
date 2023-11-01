@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-misused-promises */
+
 import Layout from "~/components/Layout/layout.component";
 import ComingSoon from "~/components/ComingSoon/comingSoon.component";
 
@@ -27,7 +29,7 @@ export default function GuestBook() {
                 <>
                 <div className="mb-4">
                     <p className="text-white">Halo, <span className="font-semibold">{session.user?.name}</span></p>
-                    <button className="text-indigo-500" onClick={() => signOut()}>Log Out</button>
+                    <button className="text-indigo-500" onClick={()=> signOut()}>Log Out</button>
                 </div>
                 <form
                 onSubmit={(e) => {
