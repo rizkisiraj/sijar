@@ -22,8 +22,8 @@ function formatDateWithAgo(date: Date) {
     
     if (yearDiff === 0 && monthDiff === 0) {
       diff = " (this month)";
-    } else if (yearDiff === 0 && monthDiff === 1) {
-      diff = " (1mo ago)";
+    } else if (yearDiff === 0) {
+      diff = ` (${monthDiff}mo ago)`;
     } else {
       diff = ` (${yearDiff}y ${monthDiff}mo ago)`;
     }

@@ -32,9 +32,9 @@ export default function GuestBook() {
                     <button className="text-indigo-500" onClick={()=> signOut()}>Log Out</button>
                 </div>
                 <form
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                     e.preventDefault();
-                    postMessage.mutate({
+                    await postMessage.mutateAsync({
                         userId: session?.user.id,
                         message: message
                     })
