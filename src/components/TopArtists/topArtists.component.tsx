@@ -6,7 +6,7 @@ const TopArtists = () => {
     const { data: topArtistsData } = useSWR<TopArtistsResponse[]>('/api/top-artists',fetcher);
 
     return (
-        <div className="w-full p-4 bg-gray-700 rounded-md shadow-md">
+        <div className="w-full p-4 bg-gray-700 rounded-md shadow-md mb-4">
             <h3 className="text-gray-300 text-xl font-semibold mb-1">Top Artists</h3>
             <p className="text-gray-400 mb-4">recently</p>
             <div className="px-1">
