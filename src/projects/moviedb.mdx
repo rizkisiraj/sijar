@@ -1,0 +1,42 @@
+---
+title: 'MovieDb Teal'
+date: '2024-01-21'
+image: '/projects/moviedb.png'
+stack: 'Website'
+---
+
+## Short Explanation
+Welcome to MovieDb Teal, your go-to online destination for all things cinema! Our website is not just a platform for exploring upcoming and popular movies but also boasts a comprehensive database leveraging the TMDB API. Dive into a sea of cinematic wonders with detailed information on a vast array of films. What's more, our site features seamless GitHub OAuth integration, allowing you to personalize your experience by adding movies to your watchlists and favorites. MovieDb Teal is where your movie exploration becomes easy, informative, and tailored just for you.
+
+## Project Goals
+Our objectives are clear and focused: firstly, to provide movie enthusiasts with an easy-to-navigate, informative platform for discovering and keeping track of upcoming and popular films; and secondly, to offer a personalized experience through seamless integration of GitHub OAuth, enabling users to curate their own watchlists and favorites, thus enriching their movie-watching journey.
+
+## Features
+- Extensive Movie Database
+- Personalized Watchlists and Favorites
+- Upcoming and Popular Movie Insights
+- GitHub OAuth for Personalized Experience
+
+## Tech Stack Used
+* **Next.js**: The backbone of our website, offering a robust framework for a seamless user experience.
+* **SWR**: This is used for efficient data fetching and caching, ensuring up-to-date movie information and a smooth browsing experience.
+* **Supabase**: Powers our database and authentication, offering a secure and reliable foundation.
+* **ChakraUI**: This UI template and component library bring an aesthetic and user-friendly interface, making your movie exploration both enjoyable and stylish.
+* **TMDB API**: The cornerstone of our movie database, providing extensive and detailed information about a wide array of films.
+
+## App Demo and Screenshots
+<section className="w-full flex flex-col gap-4 pb-4">
+    <div className="grid grid-cols-2 w-full gap-4">
+        <div className="w-full aspect-w-16 aspect-h-9">
+            <Image className="w-full object-cover rounded" src="/projects/moviedb-pict-1.webp" fill />
+        </div>
+        <div className="w-full aspect-w-16 aspect-h-9">
+            <Image className="w-full object-cover rounded" src="/projects/moviedb-pict-2.webp" fill />
+        </div>
+    </div>
+    <div className="w-full aspect-w-16 aspect-h-9">
+        <video className="object-cover w-full rounded" autoPlay muted controls>
+            <source src="/projects/moviedb-demo-1.webm" type="video/webm" />
+        </video>
+    </div>
+</section>
