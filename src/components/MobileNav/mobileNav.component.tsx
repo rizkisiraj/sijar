@@ -53,7 +53,7 @@ const MobileNav = () => {
                 {
                     links.map(link => {
                         return (
-                            <Link aria-labelledby={link.name} key={link.name} href={link.path} className={`p-2 ${link.path === currentRoute ? 'bg-gray-700' : (link.path === "/blog" && currentRoute.includes("blog") ? 'bg-gray-700'  : 'bg-gray-800')} rounded relative hover:scale-105 transition-transform`} aria-label="">
+                            <Link aria-labelledby={link.name} key={link.name} href={link.path} className={`p-2 ${link.path === currentRoute ? 'bg-gray-700' : (currentRoute.includes(link.path) && link.path !== '/' ? 'bg-gray-700'  : 'bg-gray-800')} rounded relative hover:scale-105 transition-transform`} aria-label="">
                                 <link.icon size={18} className='text-white' />
                             </Link>
                         )
