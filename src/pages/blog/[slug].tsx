@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import getPost from "~/helpers/getPost";
 import getPosts from "~/helpers/getPosts";
@@ -30,7 +31,7 @@ export default function Post(props:Props) {
         <p className="text-gray-500 text-sm">2,000 Views</p>
       </div>
       <div className="prose-lg prose-code:bg-inherit prose-h2:font-semibold prose-h2:text-2xl prose-h2:text-neutral-300 prose-code:text-neutral-300 prose-pre:bg-gray-700 prose-p:text-neutral-300 mt-12 prose-code:text-sm prose-pre:max-w-full prose-pre:overflow-x-auto">
-        <MDXRemote {...content} />
+        <MDXRemote {...content} components={{ Image }} />
       </div>
     </div>
     </Layout>
