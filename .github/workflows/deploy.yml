@@ -24,7 +24,7 @@ jobs:
         run: |
           ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             set -e
-            cd ~/personal-website
+            cd ~/sijar
             git pull origin main
             docker compose up -d --build
           EOF
